@@ -1,225 +1,616 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+/* For header */
+.site-header {
+    background-color: #0056b3;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    width: 100%;
 }
 
 .top-bar {
-  background-color: #0066cc;
-  color: #ffffff;
-  font-size: 13px;
-  height: 48px;
-  width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 24px;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
-.top-bar-container {
-  max-width: 1280px;
-  margin: 0 auto;
-  height: 100%;
-  padding: 0 16px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
 
-/* Left Section */
-.top-bar-left {
-  display: flex;
-  align-items: center;
-  gap: 16px;
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffd700;
+    text-decoration: none;
 }
 
-.brand-logo {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  text-decoration: none;
-  color: #ffffff;
-  font-weight: 700;
-  font-size: 22px;
-  letter-spacing: -0.5px;
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    font-size: 14px;
 }
 
-.guarantee-badge {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  font-size: 12px;
-  font-weight: 500;
-  max-width: 260px;
-  line-height: 1.2;
+.header-right a {
+    color: #ffffff;
+    text-decoration: none;
 }
 
-.info-btn {
-  background: none;
-  border: none;
-  color: #ffffff;
-  cursor: pointer;
-  font-size: 14px;
-  opacity: 0.8;
+.header-right a:hover {
+    text-decoration: underline;
 }
 
-.info-btn:hover {
-  opacity: 1;
+.flag {
+    font-size: 30px; 
+}
+.login-btn {
+    background-color: #ffffff;
+    color: #0056b3 !important;
+    padding: 8px 18px;
+    border-radius: 4px;
+    font-weight: bold;
 }
 
-/* Right Section */
-.top-bar-right {
-  display: flex;
-  align-items: center;
-  gap: 20px;
+/* For Banner */
+.hero-banner {
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('./images/hero-bg.jpg') no-repeat center center/cover;
+    padding: 40px 20px 80px 20px;
+    text-align: center;
+    color: #ffffff;
 }
 
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 16px;
+.hero-content h1 {
+    font-size: 28px;
+    margin-bottom: 8px;
 }
 
-.nav-links a {
-  color: #ffffff;
-  text-decoration: none;
-  font-weight: 500;
+.hero-content p {
+    font-size: 15px;
+    margin-bottom: 30px;
 }
 
-.nav-links a:hover {
-  text-decoration: underline;
+.search-card {
+    background: #ffffff;
+    color: #333333;
+    max-width: 1000px;
+    margin: 0 auto;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    padding: 20px;
+    text-align: left;
 }
 
-/* Dropdown */
-.dropdown {
-  position: relative;
+.search-tabs {
+    display: flex;
+    gap: 25px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+    position: relative;
 }
 
-.dropdown-btn {
-  background: none;
-  border: none;
-  color: #ffffff;
-  font-size: 13px;
-  font-weight: 500;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 4px;
+.search-tabs .tab {
+    text-decoration: none;
+    color: #555;
+    font-weight: bold;
+    font-size: 15px;
+    position: relative;
+    padding-bottom: 5px;
 }
 
-.dropdown-btn .arrow {
-  font-size: 9px;
+.search-tabs .tab.active {
+    color: #0056b3;
+    border-bottom: 3px solid #0056b3;
 }
 
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: #ffffff;
-  border-radius: 4px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  min-width: 140px;
-  padding: 6px 0;
-  z-index: 10;
+
+
+
+.search-inputs {
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
 
-.dropdown-menu a {
-  color: #333333;
-  padding: 8px 12px;
-  display: block;
+.input-group {
+    flex: 1;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px 15px;
+    background: #f9f9f9;
 }
 
-.dropdown-menu a:hover {
-  background-color: #f5f5f5;
-  text-decoration: none;
+.input-group label {
+    display: block;
+    font-size: 12px;
+    color: #777;
+    margin-bottom: 4px;
 }
 
-.dropdown:hover .dropdown-menu {
-  display: block;
+.input-group input {
+    width: 100%;
+    border: none;
+    background: transparent;
+    font-size: 14px;
+    outline: none;
+    font-weight: bold;
+    color: #222;
 }
 
-/* Utility Actions & Buttons */
-.utility-actions {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+.swap-icon {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 16px;
+    color: #555;
 }
 
-.flag-btn, .icon-btn {
-  background: none;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #ffffff;
+.search-btn {
+    background-color: #ffd233;
+    color: #111;
+    border: none;
+    border-radius: 8px;
+    padding: 18px 40px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
 }
 
-.icon-btn {
-  border: 1px solid rgba(255, 255, 255, 0.6);
-  border-radius: 50%;
-  width: 20px;
-  height: 20px;
-  font-size: 12px;
+.search-btn:hover {
+    background-color: #ffc107;
 }
 
-.btn {
-  padding: 6px 14px;
-  border-radius: 4px;
-  font-size: 13px;
-  font-weight: 600;
-  text-decoration: none;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  transition: background-color 0.2s ease;
+.footer-routes {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px 30px 20px;
 }
 
-.btn-outline {
-  background-color: #ffffff;
-  color: #000000;
-  border: 1px solid #ffffff;
+.routes-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
 }
 
-.btn-outline:hover {
-  background-color: #f0f0f0;
+.route-col h3 {
+    font-size: 16px;
+    color: #111;
+    margin-bottom: 15px;
 }
 
-.btn-solid {
-  background-color: #ffffff;
-  color: #000000;
-  border: 1px solid #ffffff;
+.route-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
-.btn-solid:hover {
-  background-color: #f0f0f0;
+.route-col li {
+    margin-bottom: 10px;
 }
 
-/* banner  */
-.banner {
-  position: relative;
-  height: 220px;
-  overflow: hidden;
+.route-col a {
+    color: #333;
+    text-decoration: none;
+    font-size: 13px;
 }
 
-.slide {
-  position: absolute;
-  inset: 0;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.8rem;
-  color: #fff;
-  font-weight: bold;
-  text-align: center;
+.route-col a:hover {
+    text-decoration: underline;
+    color: #0056b3;
 }
 
-.slide.active {
-  display: flex;
+.route-col li.muted a {
+    color: #aaa;
 }
 
-/* Responsive Hide for Mobile Screens */
-@media (max-width: 992px) {
-  .guarantee-badge, .nav-links {
-    display: none;
-  }
-}   
+.view-all-container {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.view-all-link {
+    color: #0056b3;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.view-all-link:hover {
+    text-decoration: underline;
+}
+
+.footer-divider {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 20px 0;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px 20px 20px;
+    gap: 30px;
+}
+
+.footer-info-col h3 {
+    font-size: 16px;
+    color: #111;
+    margin-bottom: 12px;
+}
+
+.footer-info-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-info-col li {
+    margin-bottom: 8px;
+}
+
+.footer-info-col a {
+    color: #555;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.footer-info-col a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+.footer-payments {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.footer-payments h3 {
+    font-size: 16px;
+    color: #111;
+    margin-bottom: 12px;
+}
+
+.payment-badges {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.pay-badge {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #333;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.copyright {
+    text-align: center;
+    padding: 20px 0;
+    font-size: 13px;
+    color: #666;
+}
+
+/* For Main Content */
+.popular-routes-section {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.popular-routes-section h2 {
+    font-size: 22px;
+    font-weight: bold;
+    color: #111;
+    margin-bottom: 20px;
+}
+
+.routes-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.route-card {
+    min-width: calc(25% - 15px);
+    flex: 0 0 calc(25% - 15px);
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border: 1px solid #eee;
+    display: flex;
+    flex-direction: column; /* Stacks image and text vertically */
+}
+
+.route-img {
+    height: 180px;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+}
+
+.route-info {
+    padding: 16px;
+    color: #fff;
+    flex-grow: 1; /* Forces the colored background to expand and fill any remaining height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.route-info h3 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+.route-info p {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Card bottom color themes matching your design */
+.blue-bg { background-color: #5b6d7c; }
+.orange-bg { background-color: #c47d4e; }
+.khaki-bg { background-color: #99917e; }
+
+.carousel-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.routes-track-wrapper {
+    overflow: hidden;
+    width: 100%;
+}
+
+.routes-cards-grid {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.route-card {
+    min-width: calc(25% - 15px);
+    flex: 0 0 calc(25% - 15px);
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border: 1px solid #eee;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.9);
+    border: none;
+    color: #333;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    font-size: 16px;
+    transition: background-color 0.2s;
+}
+
+.carousel-btn:hover {
+    background-color: #ffffff;
+}
+
+.prev-btn {
+    left: -15px;
+}
+
+.next-btn {
+    right: -15px;
+}
+
+/* Modal Background Overlay */
+.modal-overlay {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Modal Box */
+.modal-content {
+    background: #ffffff;
+    width: 100%;
+    max-width: 440px;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    position: relative;
+    box-sizing: border-box;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.modal-header h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #111;
+    margin: 0;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #555;
+}
+
+/* Form Elements */
+.phone-input-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.country-code-select {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 12px;
+    background: #fdfdfd;
+    font-weight: bold;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.phone-number-field {
+    flex: 1;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 12px;
+    background: #fff;
+}
+
+.phone-number-field input {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    background: transparent;
+}
+
+.recaptcha-box {
+    border: 1px solid #d3d3d3;
+    background: #f9f9f9;
+    border-radius: 8px;
+    padding: 12px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.recaptcha-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: #333;
+    cursor: pointer;
+}
+
+.recaptcha-label input {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.recaptcha-logo {
+    text-align: center;
+    color: #555;
+    font-size: 10px;
+}
+
+.recaptcha-icon {
+    font-size: 16px;
+    display: block;
+    color: #1a73e8;
+}
+
+.modal-login-btn {
+    width: 100%;
+    background-color: #051937;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.divider-or {
+    text-align: center;
+    border-bottom: 1px solid #e0e0e0;
+    line-height: 0.1em;
+    margin: 10px 0 25px 0;
+}
+
+.divider-or span {
+    background: #fff;
+    padding: 0 15px;
+    color: #777;
+    font-size: 14px;
+}
+
+.google-login-btn {
+    width: 100%;
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #d3d3d3;
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.google-icon {
+    color: #ea4335;
+    font-weight: bold;
+}
+
+.modal-footer-text {
+    text-align: center;
+    font-size: 14px;
+    color: #555;
+}
+
+.modal-footer-text a {
+    color: #0056b3;
+    text-decoration: none;
+    font-weight: bold;
+}
