@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TransitHub - Bus Booking</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header placeholder -->
+    <div id="header-placeholder"></div>
+
+    <!-- Hero Banner -->
+    <div class="hero-banner">
+        <div class="hero-content">
+            <h1>Myanmar domestic bus booking</h1>
+            <p>Find the best routes and cheap tickets instantly</p>
+            
+            <div class="search-card">
+                <div class="search-tabs">
+                    <a href="bus.html" class="tab active">Bus</a>
+                    <a href="flight.html" class="tab">Flight</a>
+                    <a href="train.html" class="tab">Train</a>
+                </div>
+                <div class="search-inputs">
+                    <div class="input-group">
+                        <label>Start point</label>
+                        <input type="text" placeholder="Enter departure city">
+                    </div>
+                    <div class="swap-icon">⇄</div>
+                    <div class="input-group">
+                        <label>Destination</label>
+                        <input type="text" placeholder="Enter destination">
+                    </div>
+                    <div class="input-group">
+                        <label>Date</label>
+                        <input type="date">
+                    </div>
+                    <button class="search-btn">Search</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- === Main Content with Carousel === -->
+    <main class="main-content">
+        <section class="popular-routes-section">
+            <h2>Popular bus routes</h2>
+            
+            <div class="carousel-container">
+                <!-- Previous Button -->
+                <button class="carousel-btn prev-btn" onclick="slideRoutes(-1)">&#10094;</button>
+
+                <!-- Cards Track Wrapper -->
+                <div class="routes-track-wrapper">
+                    <div class="routes-cards-grid" id="routesTrack">
+                        <!-- Route Card 1 -->
+                        <div class="route-card">
+                            <div class="route-img" style="background-image: url('./images/pha-an.jpg');"></div>
+                            <div class="route-info blue-bg">
+                                <h3>Pha An - Taung Wine</h3>
+                                <p>From 500,000 MMK</p>
+                            </div>
+                        </div>
+                        <!-- Route Card 2 -->
+                        <div class="route-card">
+                            <div class="route-img" style="background-image: url('./images/bagan.jpg');"></div>
+                            <div class="route-info blue-bg">
+                                <h3>Mandalay - Bagan</h3>
+                                <p>From 120,000 MMK</p>
+                            </div>
+                        </div>
+                        <!-- Route Card 3 -->
+                        <div class="route-card">
+                            <div class="route-img" style="background-image: url('./images/ngapali.jpeg');"></div>
+                            <div class="route-info orange-bg">
+                                <h3>Rakhine State - Ngapali Beach</h3>
+                                <p>From 270,000 MMK</p>
+                            </div>
+                        </div>
+                        <!-- Route Card 4 -->
+                        <div class="route-card">
+                            <div class="route-img" style="background-image: url('./images/ngwe-saung.jpg');"></div>
+                            <div class="route-info khaki-bg">
+                                <h3>Ayeyarwady Region - Ngwe Saung Beach</h3>
+                                <p>From 270,000 MMK</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Next Button -->
+                <button class="carousel-btn next-btn" onclick="slideRoutes(1)">&#10095;</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer placeholder -->
+    <div id="footer-placeholder"></div>
+    
+    <script src="js/load-components.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        let scrollAmount = 0;
+        function slideRoutes(direction) {
+            const track = document.getElementById('routesTrack');
+            const cardWidth = track.querySelector('.route-card').offsetWidth + 20;
+            scrollAmount += direction * cardWidth;
+            const maxScroll = track.scrollWidth - track.clientWidth;
+            if (scrollAmount < 0) scrollAmount = 0;
+            if (scrollAmount > maxScroll) scrollAmount = maxScroll;
+            track.style.transform = `translateX(-${scrollAmount}px)`;
+        }
+    </script>
+</body>
+</html>

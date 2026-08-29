@@ -2,35 +2,34 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TransitHub - Home</title>
+    <title>TransitHub - Train Booking</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Header placeholder (Automatically loads components/header.html and login modal) -->
+    <!-- Header placeholder (Loads header & login modal automatically) -->
     <div id="header-placeholder"></div>
 
-    <!-- Search Banner (Hero section with Bus tab active) -->
+    <!-- Hero Banner with Train Tab Active -->
     <div class="hero-banner">
         <div class="hero-content">
-            <h1>Myanmar domestic bus booking</h1>
-            <p>Find the best routes and cheap tickets instantly</p>
+            <h1>Myanmar railway and train booking</h1>
+            <p>Explore scenic rail routes and book your tickets easily</p>
             
             <div class="search-card">
                 <div class="search-tabs">
-                    <a href="index.html" class="tab active">Bus</a>
+                    <a href="bus.html" class="tab">Bus</a>
                     <a href="flight.html" class="tab">Flight</a>
-                    <a href="train.html" class="tab">Train</a>
+                    <a href="train.html" class="tab active">Train</a>
                 </div>
                 <div class="search-inputs">
                     <div class="input-group">
                         <label>Start point</label>
-                        <input type="text" placeholder="Enter departure city">
+                        <input type="text" placeholder="Enter departure station/city">
                     </div>
                     <div class="swap-icon">⇄</div>
                     <div class="input-group">
                         <label>Destination</label>
-                        <input type="text" placeholder="Enter destination">
+                        <input type="text" placeholder="Enter arrival station/city">
                     </div>
                     <div class="input-group">
                         <label>Date</label>
@@ -42,14 +41,14 @@
         </div>
     </div>
 
-    <!-- Main Content for Home -->
+    <!-- === Main Content (Custom per page) === -->
     <main class="main-content">
-        <!-- Your homepage cards/sections go here -->
+        <!-- Team member can add train-specific sections, schedules, or cards here -->
     </main>
 
-    <!-- Footer placeholder -->
+    <!-- Footer placeholder (Loads shared footer and destination links) -->
     <div id="footer-placeholder"></div>
-
+    
     <!-- Scripts -->
     <script src="js/load-components.js"></script>
     <script src="js/main.js"></script>
