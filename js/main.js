@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
     setTimeout(() => {
         const loginModal = document.getElementById("loginModal");
         // Update this selector to match your header's actual login button ID or class
-        const loginBtn = document.querySelector(".login-btn") || document.getElementById("loginBtn"); 
+        const loginBtn = document.querySelector(".login-btn") || document.getElementById("login-Btn"); 
         const closeBtn = document.getElementById("closeLoginModal");
 
         if (loginBtn && loginModal) {
@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 document.addEventListener("click", (e) => {
     const loginModal = document.getElementById("loginModal");
-    const loginBtn = e.target.closest("#loginBtn");
+    const loginBtn = e.target.closest("#login-Btn");
     const closeBtn = e.target.closest("#closeLoginModal");
 
     // Open Modal when clicking "Log in" in the header
