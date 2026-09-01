@@ -432,6 +432,11 @@
 .next-btn {
     right: -15px;
 }
+.carousel-btn.disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    pointer-events: none; /* Prevents clicking when disabled */
+}
 
 /* Modal Background Overlay */
 .modal-overlay {
@@ -613,4 +618,16 @@
     color: #0056b3;
     text-decoration: none;
     font-weight: bold;
+}
+
+.stations-grid {
+    display: flex;
+    gap: 20px;
+}
+
+.station-card-link {
+    text-decoration: none;
+    color: inherit;
+    width: 280px; /* Matches the exact width of your route cards */
+    flex-shrink: 0;
 }
