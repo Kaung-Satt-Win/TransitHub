@@ -16,16 +16,16 @@
             <div class="search-inputs">
                 <div class="input-group">
                     <label>Start point</label>
-                    <input type="text" placeholder="Enter departure city">
+                    <input type="text" id="startPoint" placeholder="Enter departure city" readonly>
                 </div>
-                <div class="swap-icon">⇄</div>
+                <div class="swap-icon" onclick="swapLocations()">⇄</div>
                 <div class="input-group">
                     <label>Destination</label>
-                    <input type="text" placeholder="Enter destination">
+                    <input type="text" id="destination" placeholder="Enter destination" readonly>
                 </div>
                 <div class="input-group">
                     <label>Date</label>
-                    <input type="date">
+                    <input type="date" id="travelDate" class="date-input">
                 </div>
                 <button class="search-btn">Search</button>
             </div>
