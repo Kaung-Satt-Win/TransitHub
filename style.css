@@ -229,7 +229,7 @@
     background-color: #ffc107;
 }
 
-.footer-routes {
+/* .footer-routes {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px 30px 20px;
@@ -286,9 +286,10 @@
 
 .view-all-link:hover {
     text-decoration: underline;
-}
+} */
 
-.footer-divider {
+/* Footer  */
+/* .footer-divider {
     border: none;
     border-top: 1px solid #ddd;
     margin: 20px 0;
@@ -423,7 +424,7 @@
 .route-info p {
     font-size: 14px;
     font-weight: 500;
-}
+} */
 
 /* Card bottom color themes matching your design */
 .blue-bg { background-color: #5b6d7c; }
