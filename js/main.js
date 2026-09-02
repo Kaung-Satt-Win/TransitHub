@@ -314,3 +314,36 @@ function resetBookingModal() {
     document.getElementById('bookingForm').reset();
 }
 
+document.addEventListener('DOMContentLoaded', () => {
+    // Parse URL search parameters
+    const urlParams = new URLSearchParams(window.location.search);
+    const origin = urlParams.get('origin');
+    const destination = urlParams.get('destination');
+
+    if (origin && destination) {
+        // 1. Fill main search form inputs if present on the page
+        const originInput = document.querySelector('input[placeholder*="departure"], input[placeholder*="Origin"], #modal-origin-input');
+        const destInput = document.querySelector('input[placeholder*="destination"], input[placeholder*="Destination"], #modal-dest-input');
+
+        if (originInput) originInput.value = origin;
+        if (destInput) destInput.value = destination;
+
+        // 2. Automatically update route labels across detail views/modals
+        const routeTitle = `${origin} → ${destination}`;
+        document.querySelectorAll('.route-label-text').forEach(el => {
+            el.textContent = routeTitle;
+        });
+
+        // 3. Automatically trigger and display the full detail modal if available on the page
+        const trainModal = document.getElementById('train-detail-modal');
+        const flightModal = document.getElementById('deal-detail-modal');
+
+        if (trainModal) {
+            trainModal.classList.add('active');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else if (flightModal) {
+            flightModal.classList.add('active');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    }
+});
