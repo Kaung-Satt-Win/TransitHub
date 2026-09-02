@@ -41,12 +41,350 @@
         </div>
     </div>
 
-    <!-- === Main Content (Custom per page) === -->
+    <!-- === Main Content (Train Section) === -->
     <main class="main-content">
-        <!-- Team member can add train-specific sections, schedules, or cards here -->
+        <h2>Train ticket prices for popular routes</h2>
+        <p style="color: #666; margin-bottom: 20px;">
+            Select the options to view prices between classes: upper class, first class, and ordinary class.
+        </p>
+
+        <!-- Train Filter Buttons -->
+        <div class="filter-container">
+            <button class="tab-btn active" data-filter="from-yangon">From Yangon</button>
+            <button class="tab-btn" data-filter="arriving-yangon">Arriving In Yangon</button>
+            <button class="tab-btn" data-filter="central">Central</button>
+            <button class="tab-btn" data-filter="northern">Northern</button>
+            <button class="tab-btn express-btn" data-filter="express">⭐ Express Trains</button>
+        </div>
+
+        <!-- Train Route Cards -->
+        <div class="routes-grid">
+            <div class="ticket-card voucher-ticket" data-category="from-yangon express">
+                <div>
+                    <h3>Yangon → Mandalay</h3>
+                    <p>From <strong style="color: #0066cc;">25,000 MMK</strong></p>
+                </div>
+                <button class="book-btn">Book a ticket</button>
+            </div>
+
+            <div class="ticket-card voucher-ticket" data-category="from-yangon northern">
+                <div>
+                    <h3>Yangon → Bagan</h3>
+                    <p>From <strong style="color: #0066cc;">28,000 MMK</strong></p>
+                </div>
+                <button class="book-btn">Book a ticket</button>
+            </div>
+
+            <div class="ticket-card voucher-ticket" data-category="from-yangon northern">
+                <div>
+                    <h3>Yangon → Pyin Oo Lwin</h3>
+                    <p>From <strong style="color: #0066cc;">32,000 MMK</strong></p>
+                </div>
+                <button class="book-btn">Book a ticket</button>
+            </div>
+
+            <div class="ticket-card voucher-ticket" data-category="from-yangon central">
+                <div>
+                    <h3>Yangon → Taungoo</h3>
+                    <p>From <strong style="color: #0066cc;">15,000 MMK</strong></p>
+                </div>
+                <button class="book-btn">Book a ticket</button>
+            </div>
+
+            <div class="ticket-card voucher-ticket" data-category="from-yangon central">
+                <div>
+                    <h3>Yangon → Naypyidaw</h3>
+                    <p>From <strong style="color: #0066cc;">22,000 MMK</strong></p>
+                </div>
+                <button class="book-btn">Book a ticket</button>
+            </div>
+
+            <div class="ticket-card voucher-ticket" data-category="arriving-yangon">
+                <div>
+                    <h3>Mandalay → Yangon</h3>
+                    <p>From <strong style="color: #0066cc;">25,000 MMK</strong></p>
+                </div>
+                <button class="book-btn">Book a ticket</button>
+            </div>
+        </div>
     </main>
 
-    <!-- Footer placeholder (Loads shared footer and destination links) -->
+    <!-- Side Drawer Voucher Modal -->
+    <div id="voucher-modal" class="drawer-overlay">
+        <div class="drawer-content">
+            <div class="drawer-header">
+                <button id="close-voucher-btn" class="close-arrow">←</button>
+                <h3>Discount Code Details</h3>
+            </div>
+            <div class="drawer-body" style="padding: 20px;">
+                <h2 id="modal-discount-title">150k Off</h2>
+                <p id="modal-discount-subtitle">Minimum order of 4 tickets</p>
+                <hr style="margin: 15px 0;">
+                <h4>Scope of Application</h4>
+                <p>Route: All Routes</p>
+                <p>Service: Train</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Train Route Detail Full Modal -->
+<div id="train-detail-modal" class="full-modal-overlay">
+    <div class="full-modal-container">
+        
+        <!-- Header Controls -->
+        <div class="full-modal-header">
+            <button id="close-train-detail-btn" class="back-link">&larr; Back to Train Search</button>
+        </div>
+
+        <!-- Sticky Floating Banner Bottom Bar -->
+        <div class="sticky-bottom-bar" id="sticky-bottom-bar">
+            <div class="bar-info">
+                <strong>Find <span class="route-label-text">Ho Chi Minh → Nha Trang</span> train tickets now!</strong>
+                <span>from 305,000 VND • 8 trips/day</span>
+            </div>
+            <button class="close-bar-btn" onclick="document.getElementById('sticky-bottom-bar').style.display='none'">✕</button>
+        </div>
+
+        <!-- Main Body Content -->
+        <div class="full-modal-body">
+            
+            <!-- Announcement Bar -->
+            <div class="announcement-bar">
+                <span>🔴 Tet train tickets 2027 Ho Chi Minh Station → Nha Trang are open for sale!</span>
+                <a href="#search-form-section">Book now &rarr;</a>
+            </div>
+
+            <!-- Train Search Box Bar -->
+            <div id="search-form-section" class="train-search-bar">
+                <div class="search-input-item">
+                    <label>Place of Origin</label>
+                    <input type="text" value="Ho Chi Minh" id="modal-origin-input">
+                    <small>Saigon Railway Station</small>
+                </div>
+                <div class="swap-icon">⇄</div>
+                <div class="search-input-item">
+                    <label>Destination</label>
+                    <input type="text" value="Nha Trang" id="modal-dest-input">
+                    <small>Nha Trang Railway Station</small>
+                </div>
+                <div class="search-input-item">
+                    <label>Date of Departure</label>
+                    <input type="date" value="2026-09-03">
+                </div>
+                <button class="search-yellow-btn">Search</button>
+            </div>
+
+            <!-- Passenger Categories Bar -->
+            <div class="passenger-types-bar">
+                <span class="p-item">👤 1 Passenger</span>
+                <span class="p-item tag">1 Adults</span>
+                <span class="p-item tag">0 Children <span class="badge">25%</span></span>
+                <span class="p-item tag">0 Seniors <span class="badge">15%</span></span>
+                <span class="p-item tag">0 Students <span class="badge">10%</span></span>
+                <span class="p-item tag">0 Shareholders <span class="badge">5%</span></span>
+                <span class="discount-note">Book round-trip tickets, discount up to 10% on return tickets</span>
+            </div>
+
+            <!-- Breadcrumb Navigation -->
+            <div class="deal-breadcrumb">
+                <a href="#">TransitHub.com</a> &gt; <a href="#">Train tickets</a> &gt; <span id="modal-breadcrumb-route">Ho Chi Minh Nha Trang Train Ticket</span>
+            </div>
+
+            <!-- Discount Codes Row -->
+            <div class="train-discounts-section">
+                <h3>Train Ticket Discount Codes</h3>
+                <div class="discounts-flex">
+                    <div class="discount-mini-card">
+                        <div class="card-left">New Friends</div>
+                        <div class="card-right">
+                            <strong>25% off, up to 25k</strong>
+                            <p>Minimum order 500k</p>
+                        </div>
+                    </div>
+                    <div class="discount-mini-card">
+                        <div class="card-left">For you</div>
+                        <div class="card-right">
+                            <strong>10k Off</strong>
+                            <p>Minimum order 900k</p>
+                        </div>
+                    </div>
+                    <div class="discount-mini-card">
+                        <div class="card-left">For you</div>
+                        <div class="card-right">
+                            <strong>50k Off</strong>
+                            <p>Minimum order 3 million</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Overview Text -->
+            <div class="overview-text-block">
+                According to TransitHub's continuously updated data, the <strong class="route-label-text">Ho Chi Minh to Nha Trang</strong> train departs from <strong>Ho Chi Minh station</strong> to <strong>Nha Trang station</strong>, currently has 8 fixed trips per day including train codes <strong>SE10, SE12, SE2, SE22, SE4, SE6, SE8, SNT2</strong>.
+                <br><br>
+                The earliest departure is at 06:00, the latest is at 21:45, with an average travel time of 7 hours and 9 minutes.
+                <br><br>
+                The cheapest ticket price is from <strong>305,000 VND/ticket</strong>, the average is about <strong>799,000 VND/ticket</strong> depending on the seat class and type of train.
+            </div>
+
+            <!-- Real-Time Price & Schedule Table -->
+            <div class="schedule-table-section">
+                <h2><span class="route-label-text">Ho Chi Minh Nha Trang</span> train ticket price list in real time</h2>
+                <small class="data-source-tag">🔄 Fare data from Vietnam Railways (DSVN), real-time updates on TransitHub</small>
+
+                <div class="table-responsive">
+                    <table class="realtime-train-table">
+                        <thead>
+                            <tr>
+                                <th>Departure time</th>
+                                <th>Arrival time</th>
+                                <th>Train Code</th>
+                                <th>Fares</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <strong>08:45</strong>
+                                    <p>Saigon Railway Station</p>
+                                </td>
+                                <td>
+                                    <strong>16:06</strong>
+                                    <p>Nha Trang Railway Station</p>
+                                </td>
+                                <td><strong>SE6</strong></td>
+                                <td>
+                                    <strong class="price">417,000 VND</strong>
+                                    <p>Soft sitting</p>
+                                </td>
+                                <td><button class="book-yellow-btn">Book a ticket</button></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>21:00</strong>
+                                    <p>Saigon Railway Station</p>
+                                </td>
+                                <td>
+                                    <strong>04:54</strong>
+                                    <p>Nha Trang Railway Station</p>
+                                </td>
+                                <td><strong>SE12</strong></td>
+                                <td>
+                                    <strong class="price">475,000 VND</strong>
+                                    <p>Soft sitting</p>
+                                </td>
+                                <td><button class="book-yellow-btn">Book a ticket</button></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>21:45</strong>
+                                    <p>Saigon Railway Station</p>
+                                </td>
+                                <td>
+                                    <strong>05:40</strong>
+                                    <p>Nha Trang Railway Station</p>
+                                </td>
+                                <td><strong>SNT2</strong></td>
+                                <td>
+                                    <strong class="price">579,000 VND</strong>
+                                    <p>4 compartment beds</p>
+                                </td>
+                                <td><button class="book-yellow-btn">Book a ticket</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Key Features / Trust Badges Section -->
+            <div class="trust-features-grid">
+                <div class="feature-item">
+                    <span class="f-icon">🛡️</span>
+                    <h4>Sure there are tickets</h4>
+                    <p>Directly connecting Vietnam Railways, updating actual availability in real-time.</p>
+                </div>
+                <div class="feature-item">
+                    <span class="f-icon">💳</span>
+                    <h4>Diversified payments</h4>
+                    <p>Secure payment via e-wallets, domestic ATM cards, Visa, and Mastercard.</p>
+                </div>
+                <div class="feature-item">
+                    <span class="f-icon">🏷️</span>
+                    <h4>Always have a good price</h4>
+                    <p>Get up to 25% off your first booking, and extra discounts on round trips.</p>
+                </div>
+                <div class="feature-item">
+                    <span class="f-icon">🎧</span>
+                    <h4>Dedicated support</h4>
+                    <p>Exchange and cancel train tickets online 24/7 without going to the station.</p>
+                </div>
+            </div>
+
+            <!-- Route Summary Info Table -->
+            <div class="info-table-section">
+                <h3>How long does it take to get from <span class="route-label-text">Ho Chi Minh City to Nha Trang</span> by train?</h3>
+                <table class="info-summary-table">
+                    <tr>
+                        <td>Total Distance</td>
+                        <td><strong>411km</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Average Time</td>
+                        <td><strong>7 hrs 9 mins</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Cheapest one-way fare</td>
+                        <td><strong>305,000 VND</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Cheapest round-trip fares</td>
+                        <td><strong>833,000 VND</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Departure Station</td>
+                        <td>Saigon Railway Station (No. 1 Nguyen Thong, District 3)</td>
+                    </tr>
+                    <tr>
+                        <td>Arrival Station</td>
+                        <td>Nha Trang Railway Station (Thai Nguyen, Nha Trang)</td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- Seat Classes Detailed Section -->
+            <div class="seat-classes-section">
+                <h3>What classes of seats are available on the train?</h3>
+                
+                <!-- Class 1 -->
+                <div class="seat-class-card">
+                    <div class="class-info">
+                        <h4>Sleeper 4 (ANL)</h4>
+                        <p><strong>Characteristics:</strong> The 4th compartment sleeper is classified as the VIP segment. In one car, there are 4 beds arranged on 2 floors with private, spacious space.</p>
+                        <p><strong>Advantages:</strong> Passengers can lie down comfortably, fully equipped with air conditioning, bedding, and power outlets.</p>
+                    </div>
+                    <div class="class-img">
+                        <img src="./images/Sleeper4Bed.jpg" alt="Sleeper 4 Cabin" onerror="this.src='https://via.placeholder.com/350x200?text=Sleeper+4+Cabin'">
+                    </div>
+                </div>
+
+                <!-- Class 2 -->
+                <div class="seat-class-card">
+                    <div class="class-info">
+                        <h4>Sleeper 6 (BNL)</h4>
+                        <p><strong>Characteristics:</strong> Compartment 6 beds consist of 6 beds divided into 3 floors, offering an affordable option for long trips.</p>
+                        <p><strong>Advantages:</strong> Equipped with blankets and mattresses, suitable for overnight journeys.</p>
+                    </div>
+                    <div class="class-img">
+                        <img src="./images/Sleeper6Bed.jpg" alt="Sleeper 6 Cabin" onerror="this.src='https://via.placeholder.com/350x200?text=Sleeper+6+Cabin'">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+    <!-- Footer placeholder -->
     <div id="footer-placeholder"></div>
     
     <!-- Scripts -->
