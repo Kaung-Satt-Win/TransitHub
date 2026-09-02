@@ -49,6 +49,18 @@ document.addEventListener("click", (e) => {
 
 // 2. Train Tab Filter Handler
 document.addEventListener("DOMContentLoaded", () => {
+    // Because the header is loaded dynamically via fetch, 
+    // we use a slight delay or event delegation to capture the login button click
+    setTimeout(() => {
+        const loginModal = document.getElementById("loginModal");
+        // Update this selector to match your header's actual login button ID or class
+        const loginBtn = document.querySelector(".login-btn") || document.getElementById("login-Btn"); 
+        const closeBtn = document.getElementById("closeLoginModal");
+
+        if (loginBtn && loginModal) {
+            loginBtn.addEventListener("click", (e) => {
+                e.preventDefault();
+                loginModal.style.display = "flex";
     const filterButtons = document.querySelectorAll(".tab-btn");
     const ticketCards = document.querySelectorAll(".ticket-card");
 
@@ -166,6 +178,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+document.addEventListener("click", (e) => {
+    const loginModal = document.getElementById("loginModal");
+    const loginBtn = e.target.closest("#login-Btn");
+    const closeBtn = e.target.closest("#closeLoginModal");
 let activeInputId = null;
 
 // Listen for clicks anywhere on the document (handles dynamically loaded inputs)
