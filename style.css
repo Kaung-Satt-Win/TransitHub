@@ -432,6 +432,11 @@
 .next-btn {
     right: -15px;
 }
+.carousel-btn.disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    pointer-events: none; /* Prevents clicking when disabled */
+}
 
 /* Modal Background Overlay */
 .modal-overlay {
@@ -1684,4 +1689,243 @@
     font-size: 14px;
     cursor: pointer;
     opacity: 0.7;
+
+.stations-grid {
+    display: flex;
+    gap: 20px;
+}
+
+.station-card-link {
+    text-decoration: none;
+    color: inherit;
+    width: 280px; /* Matches the exact width of your route cards */
+    flex-shrink: 0;
+}
+
+/* Search Results Styles */
+.results-section {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.results-summary-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.results-summary-card h2 {
+    margin: 0;
+    color: #333;
+    font-size: 24px;
+}
+
+.results-summary-card p {
+    margin: 0;
+    color: #666;
+}
+
+.result-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.back-home-btn, .modify-search-btn {
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    display: inline-block;
+}
+
+.back-home-btn {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+.back-home-btn:hover {
+    background-color: #e0e0e0;
+}
+
+.modify-search-btn {
+    background-color: #ffc107;
+    color: #333;
+}
+
+.modify-search-btn:hover {
+    background-color: #e0a800;
+}
+
+.bus-list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.bus-result-card {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    gap: 20px;
+}
+
+.bus-img {
+    width: 140px;
+    height: 100px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 6px;
+    flex-shrink: 0;
+}
+
+.bus-info {
+    flex-grow: 1;
+}
+
+.bus-info h3 {
+    margin: 0 0 5px 0;
+    color: #222;
+    font-size: 18px;
+}
+
+.bus-type, .departure-time {
+    margin: 0 0 3px 0;
+    color: #666;
+    font-size: 14px;
+}
+
+.bus-pricing {
+    text-align: right;
+}
+
+.price {
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+    color: #d9534f;
+    margin-bottom: 10px;
+}
+
+.book-now-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.book-now-btn:hover {
+    background-color: #0056b3;
+}
+
+.seat-modal-content {
+    max-width: 400px;
+    width: 100%;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.driver-seat {
+    text-align: center;
+    background: #f0f0f0;
+    padding: 6px;
+    border-radius: 4px;
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.seats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.seat {
+    padding: 12px 0;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 14px;
+    background: #f9f9f9;
+}
+
+.seat.available:hover {
+    border-color: #007bff;
+    color: #007bff;
+}
+
+.seat.selected {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
+.seat.booked {
+    background-color: #e9ecef;
+    color: #adb5bd;
+    cursor: not-allowed;
+    border-color: #dee2e6;
+}
+
+.action-btn {
+    width: 100%;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.action-btn:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+.action-btn:hover:not(:disabled) {
+    background-color: #218838;
+}
+
+.input-group-modal {
+    margin-bottom: 15px;
+}
+
+.input-group-modal label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #333;
+}
+
+.input-group-modal input {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.selected-summary {
+    margin-bottom: 15px;
+    color: #333;
 }
