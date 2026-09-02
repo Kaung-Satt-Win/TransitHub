@@ -10,30 +10,41 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 12px 24px;
+    padding: 10px 24px;
     max-width: 1400px;
     margin: 0 auto;
+    box-sizing: border-box;
 }
 
+/* Left Side logo  */
 .header-left {
     display: flex;
     align-items: center;
-    gap: 20px;
+    flex-shrink: 0;
 }
 
 .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
     font-size: 24px;
     font-weight: bold;
     color: #ffd700;
     text-decoration: none;
 }
 
+.brand-icon {
+    fill: #ffd700;
+}
 
+/* Right Side  */
 .header-right {
     display: flex;
     align-items: center;
-    gap: 18px;
+    gap: 16px;
     font-size: 14px;
+    font-weight: 600;
+    white-space: nowrap;
 }
 
 .header-right a {
@@ -41,20 +52,66 @@
     text-decoration: none;
 }
 
-.header-right a:hover {
+.header-right a.nav-link:hover {
     text-decoration: underline;
 }
 
-.flag {
-    font-size: 30px; 
+.flag-icon img {
+    width: 28px;
+    height: 20px;
+    object-fit: cover;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    cursor: pointer;
 }
-.login-btn {
-    background-color: #ffffff;
-    color: #0056b3 !important;
-    padding: 8px 18px;
-    border-radius: 4px;
+
+.help-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    font-size: 13px;
     font-weight: bold;
 }
+
+.hotline-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    color: #2474e5 !important;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: bold;
+    gap: 8px;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.login-btn { 
+    display: inline-flex; 
+    align-items: center; 
+    justify-content: center; 
+    background-color: #ffffff; 
+    color: #2474e5 !important; 
+    padding: 8px 22px; 
+    border-radius: 6px; 
+    font-weight: bold; 
+    text-decoration: none; 
+    white-space: nowrap; 
+    flex-shrink: 0;
+} 
+    
+/* .login-btn:hover { 
+    background-color: #f0f0f0; 
+    text-decoration: none; 
+} */
+
 
 /* For Banner */
 .hero-banner {
@@ -172,7 +229,7 @@
     background-color: #ffc107;
 }
 
-.footer-routes {
+/* .footer-routes {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px 30px 20px;
@@ -229,9 +286,10 @@
 
 .view-all-link:hover {
     text-decoration: underline;
-}
+} */
 
-.footer-divider {
+/* Footer  */
+/* .footer-divider {
     border: none;
     border-top: 1px solid #ddd;
     margin: 20px 0;
@@ -366,7 +424,7 @@
 .route-info p {
     font-size: 14px;
     font-weight: 500;
-}
+} */
 
 /* Card bottom color themes matching your design */
 .blue-bg { background-color: #5b6d7c; }
